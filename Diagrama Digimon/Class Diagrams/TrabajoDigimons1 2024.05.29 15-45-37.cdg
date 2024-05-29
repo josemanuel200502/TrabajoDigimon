@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TrabajoDigimons1">
+  <ClassDiagramComponents>
+    <Class name="BatallaDigital" package="com.mycompany.trabajodigimons1" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="enemigo" type="Digimon" visibility="private"/>
+        <Field name="domador" type="Domador" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Domador" name="domador"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="elige" returnType="Digimon" visibility="public"/>
+        <Method name="pelea" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Digimon" package="com.mycompany.trabajodigimons1" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="nivel" type="int" visibility="private"/>
+        <Field name="ataque" type="int" visibility="private"/>
+        <Field name="salud" type="int" visibility="private"/>
+        <Field name="dp1" type="int" visibility="private"/>
+        <Field name="dp2" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getNivel" returnType="int" visibility="public"/>
+        <Method name="setNivel" returnType="void" visibility="public">
+          <Argument type="int" name="nivel"/>
+        </Method>
+        <Method name="getAtaque" returnType="int" visibility="public"/>
+        <Method name="setAtaque" returnType="void" visibility="public">
+          <Argument type="int" name="ataque"/>
+        </Method>
+        <Method name="getSalud" returnType="int" visibility="public"/>
+        <Method name="setSalud" returnType="void" visibility="public">
+          <Argument type="int" name="salud"/>
+        </Method>
+        <Method name="getDp1" returnType="int" visibility="public"/>
+        <Method name="setDp1" returnType="void" visibility="public">
+          <Argument type="int" name="dp1"/>
+        </Method>
+        <Method name="getDp2" returnType="int" visibility="public"/>
+        <Method name="setDp2" returnType="void" visibility="public">
+          <Argument type="int" name="dp2"/>
+        </Method>
+        <Method name="reducirSalud" returnType="void" visibility="public">
+          <Argument type="int" name="danio"/>
+        </Method>
+        <Method name="ataque1" returnType="int" visibility="public"/>
+        <Method name="ataque2" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Domador" package="com.mycompany.trabajodigimons1" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="equipo" type="ArrayList&lt;Digimon&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="captura" returnType="void" visibility="public">
+          <Argument type="Digimon" name="digimon"/>
+        </Method>
+        <Method name="seguirJugando" returnType="void" visibility="private"/>
+        <Method name="getEquipo" returnType="ArrayList&lt;Digimon&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="com.mycompany.trabajodigimons1" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="enemigo" source="com.mycompany.trabajodigimons1.BatallaDigital" target="com.mycompany.trabajodigimons1.Digimon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="equipo" source="com.mycompany.trabajodigimons1.Domador" target="com.mycompany.trabajodigimons1.Digimon" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Digimon&gt;"/>
+    <UseRelation source="com.mycompany.trabajodigimons1.Domador" target="com.mycompany.trabajodigimons1.Digimon" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="domador" source="com.mycompany.trabajodigimons1.BatallaDigital" target="com.mycompany.trabajodigimons1.Domador" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.trabajodigimons1.BatallaDigital" target="com.mycompany.trabajodigimons1.Digimon" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
